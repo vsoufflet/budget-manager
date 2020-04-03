@@ -1,4 +1,4 @@
-package models.depenses;
+package project.budget.models.depenses;
 
 public enum Periodicite {
     PONCTUELLE,

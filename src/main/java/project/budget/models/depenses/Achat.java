@@ -1,12 +1,10 @@
-package models.depenses;
+package project.budget.models.depenses;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import models.bancaire.MoyenPaiement;
-
-import java.util.List;
+import project.budget.models.bancaire.MoyenPaiement;
 
 @Getter
 @Setter
@@ -15,7 +13,6 @@ import java.util.List;
 public class Achat extends Depense {
 
     private MoyenPaiement moyenPaiement;
-    private List<Produit> produits;
 
     @Override
     Periodicite getPeriodicite() {

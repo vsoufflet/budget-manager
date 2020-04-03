@@ -1,10 +1,10 @@
-package models.depenses;
+package project.budget.models.depenses;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import models.bancaire.TypeCommerce;
+import project.budget.models.bancaire.TypeCommerce;
 
 @Getter
 @Setter

@@ -1,12 +1,12 @@
-package models.depenses;
+package project.budget.models.depenses;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import models.bancaire.MoyenPaiement;
-import models.bancaire.Operation;
-import models.bancaire.TypeOperation;
+import project.budget.models.bancaire.MoyenPaiement;
+import project.budget.models.bancaire.Operation;
+import project.budget.models.bancaire.TypeOperation;
 
 import java.time.LocalDate;
 

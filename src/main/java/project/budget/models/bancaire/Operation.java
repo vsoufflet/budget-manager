@@ -1,4 +1,4 @@
-package models.bancaire;
+package project.budget.models.bancaire;
 
 import java.time.LocalDate;
 

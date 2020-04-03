@@ -1,4 +1,4 @@
-package models.depenses;
+package project.budget.models.depenses;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

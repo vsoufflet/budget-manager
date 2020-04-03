@@ -1,4 +1,4 @@
-package models.bancaire;
+package project.budget.models.bancaire;
 
 public enum TypeCommerce {
     BOULANGER,
