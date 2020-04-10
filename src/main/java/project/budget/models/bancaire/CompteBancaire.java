@@ -1,15 +1,15 @@
 package project.budget.models.bancaire;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode
 @ToString
 public class CompteBancaire {
@@ -20,3 +20,4 @@ public class CompteBancaire {
     private LocalDate dateCloture;
     private float tauxInterets;
 }
+
