@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import project.budget.models.bancaire.CompteBancaire;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -54,5 +55,26 @@ public class CompteBancaireRepository {
             logger.error("Erreur lors de la récupération du compte {}", compteBancaireId.toString(), e);
             throw e;
         }
+    }
+
+    public void delete(UUID compteBancaireId) {
+        String request = "DELETE FROM comptes_bancaires WHERE id = :id";
+        try {
+            jdbcTemplate.update(request, Map.of("id", compteBancaireId));
+        } catch (EmptyResultDataAccessException e) {
+            logger.error("Aucun résultat correspondant au compte {}", compteBancaireId.toString(), e);
+            throw e;
+        } catch (IncorrectResultSizeDataAccessException e) {
+            logger.error("Plusieurs résultats correspondant au compte {}", compteBancaireId.toString(), e);
+            throw e;
+        } catch (Exception e) {
+            logger.error("Erreur lors de la récupération du compte {}", compteBancaireId.toString(), e);
+            throw e;
+        }
+    }
+
+    public List<CompteBancaire> getAll() {
+        String request = "SELECT * FROM comptes_bancaires";
+        return jdbcTemplate.query(request, new BeanPropertyRowMapper<>(CompteBancaire.class));
     }
 }

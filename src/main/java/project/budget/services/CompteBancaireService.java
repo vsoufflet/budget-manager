@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import project.budget.models.bancaire.CompteBancaire;
 import project.budget.repositories.CompteBancaireRepository;
 
+import java.util.List;
+import java.util.UUID;
+
 @Service
 public class CompteBancaireService {
 
@@ -23,5 +26,17 @@ public class CompteBancaireService {
         compte.setId(uuidService.generateUuid());
         repository.create(compte);
         return compte;
+    }
+
+    public CompteBancaire get(UUID compteId) {
+        return repository.get(compteId);
+    }
+
+    public void delete(UUID compteId) {
+        repository.delete(compteId);
+    }
+
+    public List<CompteBancaire> getAll() {
+        return repository.getAll();
     }
 }
